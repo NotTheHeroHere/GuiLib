@@ -131,11 +131,4 @@ function GuiLib.NewExitButton(frame:Frame, mainScreenGui:ScreenGui, size:UDim2, 
     end)
     return TextButton
 end
---return GuiLib
-
-local gui = GuiLib.NewGui()
-local frame = GuiLib.NewFrame(gui)
-local button = GuiLib.NewButton(frame)
-button.Text = "ASJKDHJASKLDJLAKSDJ"
-local exitbutton = GuiLib.NewExitButton(frame, gui)
-exitbutton.Text = "EXITTTTTT"
+return GuiLib
