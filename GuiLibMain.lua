@@ -43,6 +43,8 @@ function GuiLib.NewFrame(screenGui:ScreenGui, position:UDim2, size:UDim2, paddin
     UIPadding.PaddingLeft = padding
     UIPadding.PaddingRight = padding
     UIPadding.PaddingTop = padding
+    local UIDragDetector = Instance.new("UIDragDetector")
+    UIDragDetector.Parent = Frame
     return Frame
 end
 
