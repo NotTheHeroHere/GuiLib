@@ -105,7 +105,7 @@ function GuiLib.NewBox(frame:Frame, size:UDim2, padding:UDim)
     TextBox.BackgroundColor3 = Color3.fromRGB(255, 85, 127)
     TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
     TextBox.BorderSizePixel = 0
-    TextBox.Size = UDim2.new(1, 0, 0.200000003, 0)
+    TextBox.Size = size
     TextBox.Font = Enum.Font.SourceSans
     TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
     TextBox.TextSize = 14.000
