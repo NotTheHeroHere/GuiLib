@@ -15,16 +15,15 @@ function GuiLib.NewGui()
     getgenv().mainScreenGui = ScreenGui
     return ScreenGui
 end
-function GuiLib.NewFrame(screenGui:ScreenGui, position:UDim2, size:UDim2, padding:UDim)
-    position = position or UDim2.new(0, 0, 0.5, 0)
-    size = size or UDim2.new(0.15, 0, 0.3, 0)
+function GuiLib.NewFrame(screenGui:ScreenGui, size:UDim2, padding:UDim)
+    size = size or UDim2.new(0.15, 0, 0.45, 0)
     if screenGui == nil then warn("No ScreenGui Provided!") return end
     local Frame = Instance.new("Frame")
     Frame.Parent = screenGui
     Frame.BackgroundColor3 = Color3.fromRGB(255, 85, 255)
     Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Frame.BorderSizePixel = 0
-    Frame.Position = position
+    Frame.Position = UDim2.new(0, 0, 0.5, 0)
     Frame.Size = size
     padding = padding or UDim.new(0.05, 0)
     local UIListLayout = Instance.new("UIListLayout")
