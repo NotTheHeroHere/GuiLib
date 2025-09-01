@@ -114,11 +114,6 @@ function GuiLib:NewFrame(args:table)
         local UICorner = Instance.new("UICorner")
         UICorner.CornerRadius = padding
         UICorner.Parent = TextLabel
-        TextLabel.Activated:Connect(function()
-            if args.callback then
-                xpcall(args.callback, errorHandler)
-            end
-        end)
         return TextLabel
     end
     
