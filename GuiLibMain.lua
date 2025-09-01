@@ -199,14 +199,14 @@ function FrameClass:NewToggle(args: table)
     UICorner.CornerRadius = getArgument(args.padding, UDim.new(0.1,0))
     UICorner.Parent = ToggleFrame
     local ToggleButton = Instance.new("TextButton")
-    ToggleButton.Size = UDim2.new(0.5,0,1,0)
+    ToggleButton.Size = UDim2.new(0.2,0,1,0)
     ToggleButton.Position = UDim2.new(0,0,0,0)
     ToggleButton.TextSize = 35.000
     local TextLabel = Instance.new("TextLabel")
     TextLabel.Parent = ToggleFrame
     TextLabel.TextColor3 = color
-    TextLabel.Position = UDim2.new(0.5, 0, 0, 0)
-    TextLabel.Size = UDim2.new(0.5, 0, 1, 0)
+    TextLabel.Position = UDim2.new(0.2, 0, 0, 0)
+    TextLabel.Size = UDim2.new(0.8, 0, 1, 0)
     TextLabel.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
     TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
     TextLabel.BorderSizePixel = 0
