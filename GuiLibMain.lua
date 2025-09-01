@@ -38,7 +38,7 @@ end
 --Args: size, padding
 function GuiLib:NewFrame(args:table)
     args = args or {}
-    local size = getArgument(args.size, UDim2.new(0.15, 0, 0.45, 0))
+    local size = getArgument(args.size, UDim2.new(0.3, 0, 0.5, 0))
     if self == nil then warn("No ScreenGui Provided!") return end
     local Frame = Instance.new("Frame")
     Frame.Parent = self.Gui
@@ -71,7 +71,7 @@ function GuiLib:NewFrame(args:table)
     FrameObject.Frame = Frame
     local FrameClass = {}
     FrameClass.__index = FrameClass
-    --Args: size, padding, callback
+    --Args: size, padding, callback, text
     function FrameClass:NewButton(args:table)
         args = args or {}
         local size = getArgument(args.size, UDim2.new(1, 0, 0.2, 0))
@@ -85,6 +85,7 @@ function GuiLib:NewFrame(args:table)
         TextButton.Font = Enum.Font.SourceSans
         TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextButton.TextSize = 14.000
+        TextButton.Text = args.text or "Text"
         local UICorner = Instance.new("UICorner")
         UICorner.CornerRadius = padding
         UICorner.Parent = TextButton
@@ -95,6 +96,32 @@ function GuiLib:NewFrame(args:table)
         end)
         return TextButton
     end
+    --Args: size, padding, text
+    function FrameClass:NewLabel(args:table)
+        args = args or {}
+        local size = getArgument(args.size, UDim2.new(1, 0, 0.2, 0))
+        local padding = getArgument(args.padding, UDim.new(0.1, 0))
+        local TextLabel = Instance.new("TextLabel")
+        TextLabel.Parent = self.Frame
+        TextLabel.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.BorderSizePixel = 0
+        TextLabel.Size = size
+        TextLabel.Font = Enum.Font.SourceSans
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextSize = 14.000
+        TextLabel.Text = args.text or "Text"
+        local UICorner = Instance.new("UICorner")
+        UICorner.CornerRadius = padding
+        UICorner.Parent = TextLabel
+        TextLabel.Activated:Connect(function()
+            if args.callback then
+                xpcall(args.callback, errorHandler)
+            end
+        end)
+        return TextLabel
+    end
+    
     --Args: size, padding, min, max, fillColor, callback
     function FrameClass:NewSlider(args: table)
     args = args or {}
@@ -161,7 +188,7 @@ function GuiLib:NewFrame(args:table)
 
     return SliderFrame
     end
-
+--Args: size, padding, text
 function FrameClass:NewToggle(args: table)
     args = args or {}
     local size = getArgument(args.size, UDim2.new(1, 0, 0.2, 0))
@@ -173,10 +200,15 @@ function FrameClass:NewToggle(args: table)
     local UICorner = Instance.new("UICorner")
     UICorner.CornerRadius = getArgument(args.padding, UDim.new(0.1,0))
     UICorner.Parent = ToggleFrame
-
     local ToggleButton = Instance.new("TextButton")
     ToggleButton.Size = UDim2.new(0.5,0,1,0)
     ToggleButton.Position = UDim2.new(0,0,0,0)
+    local TextLabel = Instance.new("TextLabel")
+    TextLabel.Size = UDim2.new(0.5,0,1,0)
+    TextLabel.Position = UDim2.new(0.5,0,0.5,0)
+    TextLabel.BackgroundColor3 = Color3.fromRGB(16,16,16)
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.Text = args.text or "Text"
     ToggleButton.BackgroundColor3 = args.offColor or Color3.fromRGB(200,0,0)
     ToggleButton.Text = args.text or "OFF"
     ToggleButton.Font = Enum.Font.SourceSans
@@ -202,7 +234,7 @@ function FrameClass:NewToggle(args: table)
 
     return ToggleFrame
     end
-    --Args: size, padding, callback
+    --Args: size, padding, callback, text
     function FrameClass:NewBox(args:table)
         args = args or {}
         local size = getArgument(args.size, UDim2.new(1, 0, 0.2, 0))
@@ -215,6 +247,7 @@ function FrameClass:NewToggle(args: table)
         TextBox.Font = Enum.Font.SourceSans
         TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextBox.TextSize = 14.000
+        TextBox.PlaceholderText = args.text or "Text"
         local padding = getArgument(args.padding, UDim.new(0.1, 0))
         local UICorner = Instance.new("UICorner")
         UICorner.CornerRadius = padding
@@ -224,7 +257,7 @@ function FrameClass:NewToggle(args: table)
         end)
         return TextBox
     end
-    --Args: size, padding
+    --Args: size, padding, text
     function FrameClass:NewExitButton(args:table)
         args = args or {}
         local size = getArgument(args.size, UDim2.new(1, 0, 0.2, 0))
@@ -237,6 +270,7 @@ function FrameClass:NewToggle(args: table)
         TextButton.Font = Enum.Font.SourceSans
         TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextButton.TextSize = 14.000
+        TextButton.Text = args.text or "Text"
         local padding = getArgument(args.padding, UDim.new(0.1, 0))
         local UICorner = Instance.new("UICorner")
         UICorner.CornerRadius = padding
