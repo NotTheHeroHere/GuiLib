@@ -37,7 +37,7 @@ function GuiLib:NewFrame(args:table)
     local size = getArgument(args.size, UDim2.new(0.25, 0, 0.4, 0))
     if self == nil then warn("No ScreenGui Provided!") return end
     local MainFrame = Instance.new("Frame")
-    MainFrame.BackgroundTransparency = 1
+    MainFrame.BackgroundTransparency = 0.8
     MainFrame.Parent = self.Gui
     MainFrame.BorderSizePixel = 0
     MainFrame.Position = UDim2.new(0, 0, 0.5, 0)
@@ -47,7 +47,7 @@ function GuiLib:NewFrame(args:table)
     Frame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
     Frame.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
     Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Frame.Size = UDim2.new(1, 0, 1, 0)
+    Frame.Size = UDim2.new(0.8, 0, 0.8, 0)
     Frame.Parent = MainFrame
     local padding = UDim.new(0.005, 0)
     local UIListLayout = Instance.new("UIListLayout")
