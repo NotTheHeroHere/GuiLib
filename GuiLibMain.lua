@@ -1,4 +1,3 @@
---Main
 local GuiLib = {}
 GuiLib.__index = GuiLib
 local CoreGui = if cloneref then cloneref(game:GetService("CoreGui")) else game.Players.LocalPlayer:Kick("Unsupported exploit\n\nYour executor is missing cloneref")
