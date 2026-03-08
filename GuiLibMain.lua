@@ -2,7 +2,7 @@
 local GuiLib = {}
 GuiLib.__index = GuiLib
 local CoreGui = if cloneref then cloneref(game:GetService("CoreGui")) else game.Players.LocalPlayer:Kick("Unsupported exploit\n\nYour executor is missing cloneref")
-local UserInputService = game:GetService("UserInputService")
+local UserInputService = cloneref(game:GetService("UserInputService"))
 local color = Color3.fromRGB(125, 125, 125)
 if getgenv().mainScreenGui ~= nil then
     for i,v in getgenv().mainScreenGui:GetDescendants() do
