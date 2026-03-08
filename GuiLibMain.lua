@@ -17,8 +17,8 @@ function getArgument(input, secondary)
     end
 end
 
-function errorHandler(error)
-    print(error)
+function errorHandler(err)
+    print("ERR:", err)
     return
 end
 
