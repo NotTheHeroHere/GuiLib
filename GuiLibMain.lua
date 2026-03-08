@@ -76,7 +76,7 @@ function GuiLib:NewFrame(args:table)
     --Args: size, padding, callback, text
     function FrameClass:NewButton(args:table)
         args = args or {}
-        local size = getArgument(args.size, UDim2.new(1, 0, 0.02, 0))
+        local size = getArgument(args.size, UDim2.new(1, 0, 0.04, 0))
         local padding = getArgument(args.padding, UDim.new(0.1, 0))
         local TextButton = Instance.new("TextButton")
         TextButton.Parent = self.Frame
