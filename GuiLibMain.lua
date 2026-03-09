@@ -87,6 +87,7 @@ function GuiLib:NewFrame(args:table)
         TextButton.Font = Enum.Font.SourceSans
         TextButton.TextColor3 = color
         TextButton.TextSize = 35.000
+        TextButton.TextScaled = true
         TextButton.Text = args.text or "Text"
         local UICorner = Instance.new("UICorner")
         UICorner.CornerRadius = padding
@@ -113,6 +114,7 @@ function GuiLib:NewFrame(args:table)
         TextLabel.Font = Enum.Font.SourceSans
         TextLabel.TextColor3 = color
         TextLabel.TextSize = 35.000
+        TextLabel.TextScaled = true
         TextLabel.Text = args.text or "Text"
         local UICorner = Instance.new("UICorner")
         UICorner.CornerRadius = padding
@@ -201,6 +203,7 @@ function FrameClass:NewToggle(args: table)
     ToggleButton.Size = UDim2.new(0.2,0,1,0)
     ToggleButton.Position = UDim2.new(0,0,0,0)
     ToggleButton.TextSize = 35.000
+    ToggleButton.TextScaled = true
     local TextLabel = Instance.new("TextLabel")
     TextLabel.Parent = ToggleFrame
     TextLabel.TextColor3 = color
@@ -212,6 +215,7 @@ function FrameClass:NewToggle(args: table)
     TextLabel.Font = Enum.Font.SourceSans
     TextLabel.TextColor3 = color
     TextLabel.TextSize = 35.000
+    TextLabel.TextScaled = true
     TextLabel.Text = args.text or "Text"
     ToggleButton.BackgroundColor3 = args.offColor or Color3.fromRGB(200,0,0)
     ToggleButton.Text = "OFF"
@@ -250,6 +254,7 @@ function FrameClass:NewToggle(args: table)
         TextBox.Font = Enum.Font.SourceSans
         TextBox.TextColor3 = color
         TextBox.TextSize = 35.000
+        TextBox.TextScaled = true
         TextBox.PlaceholderText = args.text or "Text"
         TextBox.Text = args.text or "Text"
         
@@ -276,6 +281,7 @@ function FrameClass:NewToggle(args: table)
         TextButton.Font = Enum.Font.SourceSans
         TextButton.TextColor3 = color
         TextButton.TextSize = 35.000
+        TextButton.TextScaled = true
         TextButton.Text = args.text or "Text"
         local padding = getArgument(args.padding, UDim.new(0.1, 0))
         local UICorner = Instance.new("UICorner")
