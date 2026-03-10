@@ -102,7 +102,7 @@ function GuiLib:NewFrame(args:table)
     --Args: size, padding, text
     function FrameClass:NewLabel(args:table)
         args = args or {}
-        local size = getArgument(args.size, UDim2.new(1, 0, 0.02, 0))
+        local size = getArgument(args.size, UDim2.new(1, 0, 0.04, 0))
         local padding = getArgument(args.padding, UDim.new(0.1, 0))
         local TextLabel = Instance.new("TextLabel")
         TextLabel.Parent = self.Frame
@@ -125,7 +125,7 @@ function GuiLib:NewFrame(args:table)
     --Args: size, padding, min, max, fillColor, callback
     function FrameClass:NewSlider(args: table)
     args = args or {}
-    local size = getArgument(args.size, UDim2.new(1, 0, 0.02, 0))
+    local size = getArgument(args.size, UDim2.new(1, 0, 0.04, 0))
     local SliderFrame = Instance.new("Frame")
     SliderFrame.Size = size
     SliderFrame.BackgroundColor3 = Color3.fromRGB(16,16,16)
@@ -191,7 +191,7 @@ function GuiLib:NewFrame(args:table)
 --Args: size, padding, text
 function FrameClass:NewToggle(args: table)
     args = args or {}
-    local size = getArgument(args.size, UDim2.new(1, 0, 0.02, 0))
+    local size = getArgument(args.size, UDim2.new(1, 0, 0.04, 0))
     local ToggleFrame = Instance.new("Frame")
     ToggleFrame.Size = size
     ToggleFrame.BackgroundColor3 = Color3.fromRGB(16,16,16)
@@ -244,7 +244,7 @@ function FrameClass:NewToggle(args: table)
     --Args: size, padding, callback, text
     function FrameClass:NewBox(args:table)
         args = args or {}
-        local size = getArgument(args.size, UDim2.new(1, 0, 0.02, 0))
+        local size = getArgument(args.size, UDim2.new(1, 0, 0.04, 0))
         local TextBox = Instance.new("TextBox")
         TextBox.Parent = self.Frame
         TextBox.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
@@ -271,7 +271,7 @@ function FrameClass:NewToggle(args: table)
     --Args: size, padding, text
     function FrameClass:NewExitButton(args:table)
         args = args or {}
-        local size = getArgument(args.size, UDim2.new(1, 0, 0.02, 0))
+        local size = getArgument(args.size, UDim2.new(1, 0, 0.04, 0))
         local TextButton = Instance.new("TextButton")
         TextButton.Parent = self.Frame
         TextButton.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
